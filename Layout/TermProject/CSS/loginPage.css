@@ -1,0 +1,89 @@
+html,
+body {
+	background-image: url(../Images/wallpaperflare.com_wallpaper.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 100%;
+	font-family: helvetica;
+}
+
+input{
+	outline: none !important;
+	box-shadow: none !important;
+}
+
+input::-webkit-inner-spin-button{
+	-webkit-appearance: none;
+}
+
+.container {
+	height: 100%;
+	align-content: center;
+}
+
+.system-name{
+	color: white;
+	text-shadow: 0px 0px 20px #242424;
+}
+
+.card {
+	height: 320px;
+	width: 400px;
+	background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.card-header h3 {
+	color: white;
+	margin-top: 10px;
+	margin-bottom: 25px;
+}
+
+.input-group:nth-child(3){
+	margin-top: 30px;
+}
+
+.input-group-prepend{
+	width: 100%;
+}
+
+.input-group-prepend span {
+	width: 50px;
+	background-color: #de002d;
+	color: black;
+	border: 0 !important;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.input-group-prepend input{
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+
+.form-check{
+	width: 40%;
+	color: white;
+}
+
+.loginBtn {
+	color: white !important;
+	background-color: #de002d !important;
+	width: 100px;
+}
+
+.loginBtn:hover {
+	opacity: 0.8;
+	transition: 1s;
+}
+
+.links {
+	color: white;
+}
+
+.links a:hover{
+	text-decoration: none;
+	color: white;
+	transition: all 1s ease-in-out;
+}
