@@ -37,18 +37,18 @@
 				<div class="form-row">
 					<div class="col-4">
 						<label><b>CUNYfirst ID</b></label>
-						<input type="number" class="form-control form-control-sm" />
+						<input type="number" class="form-control form-control-sm" required/>
 					</div>
 				</div>
 
 				<div class="form-row mt-5">
 					<div class="col-4">
 						<label><b>Last Name</b></label>
-						<input type="text" class="form-control form-control-sm" />
+						<input type="text" class="form-control form-control-sm" required/>
 					</div>
 					<div class="col-4">
 						<label><b>First Name</b></label>
-						<input type="text" class="form-control form-control-sm" />
+						<input type="text" class="form-control form-control-sm" required/>
 					</div>
 					<div class="col-3 offset-1">
 						<label><b>M. I.</b></label>
@@ -59,32 +59,32 @@
 				<div class="form-row mt-5">
 					<div class="col d-flex flex-wrap align-items-center">
 						<span>I,&nbsp;</span>
-						<input type="text" class="form-control form-control-sm col-5" />
+						<input type="text" class="form-control form-control-sm col-5" required/>
 						<span>, hereby rescind the graduation I filed for</span>
 					</div>
 				</div>
 
 				<div class="form-row mt-4">
-					<div class="col-12 d-flex align-items-center">
+					<div class="col-12 d-flex align-items-center" >
 						<span><b>Semester: </b></span>
 						<div>
 							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="radio" name="semester" value="fall">
+								<input class="form-check-input" type="radio" name="semester" value="fall" required>
 								<label class="form-check-label">Fall</label>
 							</div>
 							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="radio" name="semester" value="spring">
+								<input class="form-check-input" type="radio" name="semester" value="spring" required>
 								<label class="form-check-label">Spring</label>
 							</div>
 							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="radio" name="semester" value="summer">
+								<input class="form-check-input" type="radio" name="semester" value="summer" required>
 								<label class="form-check-label">Summer</label>
 							</div>
 						</div>
 
 						<div class="col-5 offset-1 d-flex align-items-center">
 							<span><b>Year:</b> 20</span>
-							<input type="number" class="form-control form-control-sm col-2" />
+							<input type="number" class="form-control form-control-sm col-2" required/>
 						</div>
 					</div>
 
@@ -92,11 +92,11 @@
 						<span><b>Career: </b></span>
 						<div>
 							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="radio" name="career" value="undergraduate">
+								<input class="form-check-input" type="radio" name="career" value="undergraduate" required>
 								<label class="form-check-label">Undergraduate</label>
 							</div>
 							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="radio" name="career" value="graduate">
+								<input class="form-check-input" type="radio" name="career" value="graduate" required>
 								<label class="form-check-label">Graduate</label>
 							</div>
 						</div>
@@ -124,11 +124,11 @@
 					</div>
 					<div class="col-12 mt-3 d-flex align-items-center">
 						<span>Phone Number: </span>
-						<input type="number" class="form-control form-control-sm col-4" />
+						<input type="number" class="form-control form-control-sm col-4" required/>
 					</div>
 					<div class="col-12 mt-3 d-flex align-items-center">
 						<span>QC Email Address: </span>
-						<input type="text" class="form-control form-control-sm col-4" />
+						<input type="text" class="form-control form-control-sm col-4" required/>
 						<span>@qmail.cuny.edu</span>
 					</div>
 				</div>
