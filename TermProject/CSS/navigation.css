@@ -1,0 +1,42 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	font-family: Helvetica, sans-serif;
+}
+
+.container {
+	margin: 0;
+	font-family: Helvetica, sans-serif;
+	margin: 0 auto;
+	max-width: 1000px!important;
+}
+
+.main-content{
+	margin-top: 56px;
+}
+
+.footer {
+	width: 100%;
+	color: white;
+	position: relative;
+}
+
+.address{
+	width: 100%;
+}
+
+@media (max-width: 1200px){
+	.address{
+		width: 70vmin;
+	}
+}
+
+.logo{
+	width: 25vmin;
+	position: absolute!important;
+	right: 2vmin;
+	bottom: auto;
+	top: auto;
+	float: right!important;
+	overflow: hidden;
+}
