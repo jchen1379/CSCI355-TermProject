@@ -2,9 +2,11 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<title>Request Form</title>
-		<link rel="stylesheet" type="text/css" href="../CSS/formPage.css"/>
+		<link rel="stylesheet" type="text/css" href="../CSS/formPage.css" />
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		<script src="../JS/formPage.js" type="text/javascript" charset="utf-8"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -35,71 +37,63 @@
 		<div class="container mt-5">
 			<form action="" method="POST">
 				<div class="form-row">
-					<div class="col-4">
+					<div class="col-12">
 						<label><b>CUNYfirst ID</b></label>
-						<input type="number" class="form-control form-control-sm" required/>
+						<span id="IDAlert" class="text-danger"></span>
+					</div>
+					<div class="col-12 col-sm-4">
+						<input id="studentID" type="number" class="form-control form-control-sm" required />
 					</div>
 				</div>
 
 				<div class="form-row mt-5">
-					<div class="col-4">
+					<div class="col-12 col-sm-4">
 						<label><b>Last Name</b></label>
-						<input type="text" class="form-control form-control-sm" required/>
+						<input id="lastName" type="text" class="form-control form-control-sm" required />
 					</div>
-					<div class="col-4">
+					<div class="col-12 col-sm-4 mt-4 mt-sm-0">
 						<label><b>First Name</b></label>
-						<input type="text" class="form-control form-control-sm" required/>
+						<input id="firstName" type="text" class="form-control form-control-sm" required />
 					</div>
-					<div class="col-3 offset-1">
+					<div class="col-12 col-sm-3 offset-sm-1 mt-4 mt-sm-0">
 						<label><b>M. I.</b></label>
-						<input type="text" class="form-control form-control-sm" />
+						<input id="middleName" type="text" class="form-control form-control-sm" />
 					</div>
 				</div>
 
 				<div class="form-row mt-5">
-					<div class="col d-flex flex-wrap align-items-center">
+					<div class="col-12">
+						<small id="fullNameAlert" class="text-danger"></small>
+					</div>
+					<div class="col-12 d-flex flex-wrap align-items-center">
 						<span>I,&nbsp;</span>
-						<input type="text" class="form-control form-control-sm col-5" required/>
-						<span>, hereby rescind the graduation I filed for</span>
+						<input id="fullName" type="text" class="form-control form-control-sm col-11 col-md-5" required />
+						<span>,&nbsp;</span>
+						<span>hereby rescind the graduation I filed for</span>
 					</div>
 				</div>
 
 				<div class="form-row mt-4">
-					<div class="col-12 d-flex align-items-center" >
+					<div class="col-10 col-md-4 mt-4 mt-sm-0">
 						<span><b>Semester: </b></span>
-						<div>
-							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="radio" name="semester" value="fall" required>
-								<label class="form-check-label">Fall</label>
-							</div>
-							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="radio" name="semester" value="spring" required>
-								<label class="form-check-label">Spring</label>
-							</div>
-							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="radio" name="semester" value="summer" required>
-								<label class="form-check-label">Summer</label>
-							</div>
-						</div>
-
-						<div class="col-5 offset-1 d-flex align-items-center">
-							<span><b>Year:</b> 20</span>
-							<input type="number" class="form-control form-control-sm col-2" required/>
-						</div>
+						<select name="semester" class="form-control-sm" required>
+							<option value="spring">Spring</option>
+							<option value="fall">Fall</option>
+							<option value="summer">Summer</option>
+						</select>
 					</div>
 
-					<div class="col-12 mt-2 d-flex">
+					<div class="col-10 col-md-4 mt-4 mt-md-0">
+						<span><b>Year:</b></span>
+						<select id="year" class="form-control-sm" required></select>
+					</div>
+
+					<div class="col-10 col-md-4 mt-4 mt-md-0">
 						<span><b>Career: </b></span>
-						<div>
-							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="radio" name="career" value="undergraduate" required>
-								<label class="form-check-label">Undergraduate</label>
-							</div>
-							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="radio" name="career" value="graduate" required>
-								<label class="form-check-label">Graduate</label>
-							</div>
-						</div>
+						<select name="career" class="form-control-sm" required>
+							<option value="undergraduate">Undergraduate</option>
+							<option value="graduate">Graduate</option>
+						</select>
 					</div>
 				</div>
 
@@ -124,23 +118,23 @@
 					</div>
 					<div class="col-12 mt-3 d-flex align-items-center">
 						<span>Phone Number: </span>
-						<input type="number" class="form-control form-control-sm col-4" required/>
+						<input type="number" class="form-control form-control-sm col-5 col-sm-4" required />
 					</div>
 					<div class="col-12 mt-3 d-flex align-items-center">
 						<span>QC Email Address: </span>
-						<input type="text" class="form-control form-control-sm col-4" required/>
+						<input id="email" type="text" class="form-control form-control-sm col-5 col-sm-4" required />
 						<span>@qmail.cuny.edu</span>
 					</div>
 				</div>
-				
+
 				<div class="form-row mt-5">
 					<div class="col-12 d-flex justify-content-center">
-						<input type="submit" class="btn btn-danger btn-lg" value="Submit" />
+						<input id="submit" type="submit" class="btn btn-danger btn-lg" value="Submit" />
 					</div>
 				</div>
 			</form>
 		</div>
-		
+
 		<br><br><br>
 		<div class="container mt-5">
 			<div class="row mt-5">
