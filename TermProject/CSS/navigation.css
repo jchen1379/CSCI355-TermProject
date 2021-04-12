@@ -4,6 +4,10 @@
 	font-family: Helvetica, sans-serif;
 }
 
+nav{
+	text-shadow: 0px 0px 1px #545454;
+}
+
 .container {
 	margin: 0;
 	font-family: Helvetica, sans-serif;
@@ -13,12 +17,14 @@
 
 .main-content{
 	margin-top: 56px;
+	min-height: 85vh;
 }
 
 .footer {
 	width: 100%;
 	color: white;
 	position: relative;
+	text-shadow: 0px 0px 1px #545454;
 }
 
 .address{

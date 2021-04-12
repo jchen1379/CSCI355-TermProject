@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<title>Request Form</title>
 		<link rel="stylesheet" type="text/css" href="../CSS/formPage.css" />
+		<link rel="stylesheet" type="text/css" href="../CSS/navigation.css" />
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 		<script src="../JS/formPage.js" type="text/javascript" charset="utf-8"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -12,128 +13,159 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	</head>
 	<body>
+
 		<div class="container">
-			<div class="row d-flex align-items-center">
-				<div class="col-6">
-					<img src="../Images/Queens_College_Logo.svg_-1-678x381.png" style="width:100%">
+			<nav class="navbar fixed-top navbar-expand-md navbar-dark bg-danger">
+				<a class="navbar-brand" href="#">Home</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+				 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="https://degreeworks.cuny.edu/Dashboard_qc/dashboard">Degreeworks</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="https://www.qc.cuny.edu/Pages/home.aspx">Queens College</a>
+						</li>
+					</ul>
+
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="#">Log Out</a>
+						</li>
+					</ul>
 				</div>
-				<div class="col-6 text-right">
-					<p class="m-0">QC Hub</p>
-					<p class="m-0">Dining Hall</p>
-					<p class="m-0">Room 128</p>
-					<a class="m-0 text-danger" href="qchub@qc.cuny.edu">qchub@qc.cuny.edu</a>
+			</nav>
+		</div>
+
+		<div class="main-content">
+			<div class="container">
+				<div class="row d-flex align-items-center">
+					<div class="col-6">
+						<img src="../Images/Queens_College_Logo.svg_-1-678x381.png" style="width:100%">
+					</div>
+					<div class="col-6 text-right">
+						<p class="m-0">QC Hub</p>
+						<p class="m-0">Dining Hall</p>
+						<p class="m-0">Room 128</p>
+						<a class="m-0 text-danger" href="qchub@qc.cuny.edu">qchub@qc.cuny.edu</a>
+					</div>
 				</div>
+			</div>
+
+			<div class="container">
+				<div class="row">
+					<div class="col-12 text-center">
+						<h2 class="text-danger">CANCELLATION OF GRADUATION</h2>
+					</div>
+				</div>
+			</div>
+
+			<div class="container mt-5">
+				<form action="" method="POST">
+					<div class="form-row">
+						<div class="col-12">
+							<label><b>CUNYfirst ID</b></label>
+							<span id="IDAlert" class="text-danger"></span>
+						</div>
+						<div class="col-12 col-sm-4">
+							<input id="studentID" type="number" class="form-control form-control-sm" required />
+						</div>
+					</div>
+
+					<div class="form-row mt-5">
+						<div class="col-12 col-sm-4">
+							<label><b>Last Name</b></label>
+							<input id="lastName" type="text" class="form-control form-control-sm" required />
+						</div>
+						<div class="col-12 col-sm-4 mt-4 mt-sm-0">
+							<label><b>First Name</b></label>
+							<input id="firstName" type="text" class="form-control form-control-sm" required />
+						</div>
+						<div class="col-12 col-sm-3 offset-sm-1 mt-4 mt-sm-0">
+							<label><b>M. I.</b></label>
+							<input id="middleName" type="text" class="form-control form-control-sm" />
+						</div>
+					</div>
+
+					<div class="form-row mt-5">
+						<div class="col-12">
+							<small id="fullNameAlert" class="text-danger"></small>
+						</div>
+						<div class="col-12 d-flex flex-wrap align-items-center">
+							<span>I,&nbsp;</span>
+							<input id="fullName" type="text" class="form-control form-control-sm col-11 col-md-5" required />
+							<span>,&nbsp;</span>
+							<span>hereby rescind the graduation I filed for</span>
+						</div>
+					</div>
+
+					<div class="form-row mt-4">
+						<div class="col-10 col-md-4 mt-4 mt-sm-0">
+							<span><b>Semester: </b></span>
+							<select name="semester" class="form-control-sm" required>
+								<option value="spring">Spring</option>
+								<option value="fall">Fall</option>
+								<option value="summer">Summer</option>
+							</select>
+						</div>
+
+						<div class="col-10 col-md-4 mt-4 mt-md-0">
+							<span><b>Year:</b></span>
+							<select id="year" class="form-control-sm" required></select>
+						</div>
+
+						<div class="col-10 col-md-4 mt-4 mt-md-0">
+							<span><b>Career: </b></span>
+							<select name="career" class="form-control-sm" required>
+								<option value="undergraduate">Undergraduate</option>
+								<option value="graduate">Graduate</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-row mt-5">
+						<div class="col">
+							<p>I understand that once I sign and submit this form to the QC Hub,
+								I will not be permitted to reverse my request. I also understand that
+								I will be required to re-file an application for a future graduation.</p>
+						</div>
+					</div>
+
+					<div class="form-row mt-4">
+						<div class="col">
+							<p>My reason for making this request is:</p>
+							<textarea class="form-control"></textarea>
+						</div>
+					</div>
+
+					<div class="form-row mt-5">
+						<div class="col-12">
+							<h5><b>Contact Information:</b></h5>
+						</div>
+						<div class="col-12 mt-3 d-flex align-items-center">
+							<span>Phone Number: </span>
+							<input type="number" class="form-control form-control-sm col-5 col-sm-4" required />
+						</div>
+						<div class="col-12 mt-3 d-flex align-items-center">
+							<span>QC Email Address: </span>
+							<input id="email" type="text" class="form-control form-control-sm col-5 col-sm-4" required />
+							<span>@qmail.cuny.edu</span>
+						</div>
+					</div>
+
+					<div class="form-row mt-5">
+						<div class="col-12 d-flex justify-content-center">
+							<input id="submit" type="submit" class="btn btn-danger btn-lg" value="Submit" />
+						</div>
+					</div>
+				</form>
 			</div>
 		</div>
 
-		<div class="container">
-			<div class="row">
-				<div class="col-12 text-center">
-					<h2 class="text-danger">CANCELLATION OF GRADUATION</h2>
-				</div>
-			</div>
-		</div>
-
-		<div class="container mt-5">
-			<form action="" method="POST">
-				<div class="form-row">
-					<div class="col-12">
-						<label><b>CUNYfirst ID</b></label>
-						<span id="IDAlert" class="text-danger"></span>
-					</div>
-					<div class="col-12 col-sm-4">
-						<input id="studentID" type="number" class="form-control form-control-sm" required />
-					</div>
-				</div>
-
-				<div class="form-row mt-5">
-					<div class="col-12 col-sm-4">
-						<label><b>Last Name</b></label>
-						<input id="lastName" type="text" class="form-control form-control-sm" required />
-					</div>
-					<div class="col-12 col-sm-4 mt-4 mt-sm-0">
-						<label><b>First Name</b></label>
-						<input id="firstName" type="text" class="form-control form-control-sm" required />
-					</div>
-					<div class="col-12 col-sm-3 offset-sm-1 mt-4 mt-sm-0">
-						<label><b>M. I.</b></label>
-						<input id="middleName" type="text" class="form-control form-control-sm" />
-					</div>
-				</div>
-
-				<div class="form-row mt-5">
-					<div class="col-12">
-						<small id="fullNameAlert" class="text-danger"></small>
-					</div>
-					<div class="col-12 d-flex flex-wrap align-items-center">
-						<span>I,&nbsp;</span>
-						<input id="fullName" type="text" class="form-control form-control-sm col-11 col-md-5" required />
-						<span>,&nbsp;</span>
-						<span>hereby rescind the graduation I filed for</span>
-					</div>
-				</div>
-
-				<div class="form-row mt-4">
-					<div class="col-10 col-md-4 mt-4 mt-sm-0">
-						<span><b>Semester: </b></span>
-						<select name="semester" class="form-control-sm" required>
-							<option value="spring">Spring</option>
-							<option value="fall">Fall</option>
-							<option value="summer">Summer</option>
-						</select>
-					</div>
-
-					<div class="col-10 col-md-4 mt-4 mt-md-0">
-						<span><b>Year:</b></span>
-						<select id="year" class="form-control-sm" required></select>
-					</div>
-
-					<div class="col-10 col-md-4 mt-4 mt-md-0">
-						<span><b>Career: </b></span>
-						<select name="career" class="form-control-sm" required>
-							<option value="undergraduate">Undergraduate</option>
-							<option value="graduate">Graduate</option>
-						</select>
-					</div>
-				</div>
-
-				<div class="form-row mt-5">
-					<div class="col">
-						<p>I understand that once I sign and submit this form to the QC Hub,
-							I will not be permitted to reverse my request. I also understand that
-							I will be required to re-file an application for a future graduation.</p>
-					</div>
-				</div>
-
-				<div class="form-row mt-4">
-					<div class="col">
-						<p>My reason for making this request is:</p>
-						<textarea class="form-control"></textarea>
-					</div>
-				</div>
-
-				<div class="form-row mt-5">
-					<div class="col-12">
-						<h5><b>Contact Information:</b></h5>
-					</div>
-					<div class="col-12 mt-3 d-flex align-items-center">
-						<span>Phone Number: </span>
-						<input type="number" class="form-control form-control-sm col-5 col-sm-4" required />
-					</div>
-					<div class="col-12 mt-3 d-flex align-items-center">
-						<span>QC Email Address: </span>
-						<input id="email" type="text" class="form-control form-control-sm col-5 col-sm-4" required />
-						<span>@qmail.cuny.edu</span>
-					</div>
-				</div>
-
-				<div class="form-row mt-5">
-					<div class="col-12 d-flex justify-content-center">
-						<input id="submit" type="submit" class="btn btn-danger btn-lg" value="Submit" />
-					</div>
-				</div>
-			</form>
-		</div>
 
 		<br><br><br>
 		<div class="container mt-5">
