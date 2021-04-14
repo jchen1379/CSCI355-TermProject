@@ -40,7 +40,7 @@ input::-webkit-inner-spin-button{
 }
 
 .main-content{
-	margin-top: 56px;
+	margin-top: 50px;
 	height: 90vh;
 	overflow: scroll;
 }
@@ -48,7 +48,9 @@ input::-webkit-inner-spin-button{
 .footer {
 	width: 100%;
 	color: white;
-	position: relative;
+	position: absolute;
+	left: 0;
+	right: 0;
 	text-shadow: 0px 0px 1px #545454;
 }
 
