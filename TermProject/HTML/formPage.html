@@ -24,16 +24,16 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav mr-auto">
 						<li class="nav-item">
-							<a class="nav-link active" href="https://degreeworks.cuny.edu/Dashboard_qc/dashboard">Degreeworks</a>
+							<a class="nav-link active" href="https://degreeworks.cuny.edu/Dashboard_qc/dashboard" target="_blank">Degreeworks</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link active" href="https://www.qc.cuny.edu/Pages/home.aspx">Queens College</a>
+							<a class="nav-link active" href="https://www.qc.cuny.edu/Pages/home.aspx" target="_blank">Queens College</a>
 						</li>
 					</ul>
 
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item">
-							<a class="nav-link active" href="loginPage.html">Log Out</a>
+							<a class="nav-link active" href="../index.php">Log Out</a>
 						</li>
 					</ul>
 				</div>
@@ -64,29 +64,28 @@
 			</div>
 
 			<div class="container mt-5">
-				<form action="" method="POST">
+				<form action="" method="POST" id="application-form">
 					<div class="form-row">
 						<div class="col-12">
 							<label><b>CUNYfirst ID</b></label>
-							<span id="IDAlert" class="text-danger"></span>
 						</div>
 						<div class="col-12 col-sm-4">
-							<input id="studentID" type="number" class="form-control form-control-sm" required />
+							<input id="studentID" type="number" class="form-control form-control-sm" disabled />
 						</div>
 					</div>
 
 					<div class="form-row mt-5">
 						<div class="col-12 col-sm-4">
 							<label><b>Last Name</b></label>
-							<input id="lastName" type="text" class="form-control form-control-sm" required />
+							<input id="lastName" type="text" class="form-control form-control-sm" disabled/>
 						</div>
 						<div class="col-12 col-sm-4 mt-4 mt-sm-0">
 							<label><b>First Name</b></label>
-							<input id="firstName" type="text" class="form-control form-control-sm" required />
+							<input id="firstName" type="text" class="form-control form-control-sm" disabled/>
 						</div>
 						<div class="col-12 col-sm-3 offset-sm-1 mt-4 mt-sm-0">
 							<label><b>M. I.</b></label>
-							<input id="middleName" type="text" class="form-control form-control-sm" />
+							<input id="middleName" type="text" class="form-control form-control-sm" disabled/>
 						</div>
 					</div>
 
@@ -105,10 +104,10 @@
 					<div class="form-row mt-4">
 						<div class="col-10 col-md-4 mt-4 mt-sm-0">
 							<span><b>Semester: </b></span>
-							<select name="semester" class="form-control-sm" required>
-								<option value="spring">Spring</option>
-								<option value="fall">Fall</option>
-								<option value="summer">Summer</option>
+							<select id="semester" name="semester" class="form-control-sm" required>
+								<option value="Spring">Spring</option>
+								<option value="Fall">Fall</option>
+								<option value="Summer">Summer</option>
 							</select>
 						</div>
 
@@ -119,9 +118,9 @@
 
 						<div class="col-10 col-md-4 mt-4 mt-md-0">
 							<span><b>Career: </b></span>
-							<select name="career" class="form-control-sm" required>
-								<option value="undergraduate">Undergraduate</option>
-								<option value="graduate">Graduate</option>
+							<select id="career" name="career" class="form-control-sm" required>
+								<option value="Undergraduate">Undergraduate</option>
+								<option value="Graduate">Graduate</option>
 							</select>
 						</div>
 					</div>
@@ -137,7 +136,7 @@
 					<div class="form-row mt-4">
 						<div class="col">
 							<p>My reason for making this request is:</p>
-							<textarea class="form-control"></textarea>
+							<textarea id="reason" class="form-control"></textarea>
 						</div>
 					</div>
 
@@ -145,18 +144,17 @@
 						<div class="col-12">
 							<h5><b>Contact Information:</b></h5>
 						</div>
-						<div class="col-12 mt-3 d-flex align-items-center">
-							<span>Phone Number:&nbsp;</span>
-							<input type="number" class="form-control form-control-sm col-5 col-sm-4" required />
+						<div class="col-12 mt-4 mt-sm-1">
+							<label><b>Phone Number</b></label>
+							<input id="phone" type="number" class="form-control form-control-sm col-12 col-md-7" required />
 						</div>
-						<div class="col-12 mt-3 d-flex align-items-center">
-							<span>QC Email Address:&nbsp;</span>
-							<input id="email" type="text" class="form-control form-control-sm col-5 col-sm-4" required />
-							<span>@qmail.cuny.edu</span>
+						<div class="col-12 mt-4 mt-sm-3">
+							<label><b>QC Email Address</b></label>
+							<input id="email" type="text" class="form-control form-control-sm col-12 col-md-7" disabled/>
 						</div>
 					</div>
 
-					<div class="form-row mt-5">
+					<div class="form-row mt-5 mb-5">
 						<div class="col-12 d-flex justify-content-center">
 							<input id="submit" type="submit" class="btn btn-danger btn-lg" value="Submit" />
 						</div>
@@ -165,13 +163,25 @@
 			</div>
 		</div>
 
-		<div class="container mt-5">
-			<div class="row mt-5">
-				<div class="col mt-5">
-					<p>Queens College, City University of New York</p>
-					<p>65-30 Kissena Boulevard, Queens New York 11367-1597</p>
+
+		<!-- footer part -->
+		<div class="footer">
+			<nav class="navbar navbar-dark bg-danger pt-4 pb-4">
+				<div class="d-flex flex-column text-center justify-content-center address">
+					<span>Queens College</span>
+					<span>65-30 Kissena Blvd.</span>
+					<span>Flushing, NY 11367-1597</span>
+					<span>Copyright © 2004-2021</span>
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link" href="mailto:QChub@qc.cuny.edu">Contact Us!</a>
+						</li>
+					</ul>
 				</div>
-			</div>
+				<div class="logo">
+					<img class="img-fluid" src="../Images/CUNY_Text_logo_W.png">
+				</div>
+			</nav>
 		</div>
 	</body>
 </html>
