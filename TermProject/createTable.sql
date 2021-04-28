@@ -4,7 +4,7 @@ CREATE TABLE `STUDENT` (
   `lastName` varchar(30) NOT NULL,
   `SSNLast4` varchar(4) DEFAULT NULL,
   `Email` varchar(100) NOT NULL,
-  `password` varchar(50) NOT NULL,
+  `password` varchar(500) NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10000001 DEFAULT CHARSET=latin1
 
@@ -14,7 +14,7 @@ CREATE TABLE `STAFF` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `firstName` varchar(30) NOT NULL,
   `lastName` varchar(30) NOT NULL,
-  `password` varchar(50) NOT NULL,
+  `password` varchar(500) NOT NULL,
   `title` varchar(20) NOT NULL,
   `email` varchar(100) NOT NULL,
   PRIMARY KEY (`ID`)
@@ -41,3 +41,4 @@ CREATE TABLE `APPLICATION` (
   CONSTRAINT `APPLICATION_ibfk_1` FOREIGN KEY (`staffID`) REFERENCES `STAFF` (`ID`),
   CONSTRAINT `APPLICATION_ibfk_2` FOREIGN KEY (`studentID`) REFERENCES `STUDENT` (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1000000001 DEFAULT CHARSET=latin1
+
