@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
 		<title>Student Page</title>
 		<link rel="stylesheet" type="text/css" href="../CSS/navigation.css" />
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		<script src="../JS/studentPortal.js" type="text/javascript"></script>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	</head>
 	<body>
-		
+
 		<!-- navigation part -->
 		<div class="container">
 			<nav class="navbar fixed-top navbar-expand-md navbar-dark bg-danger">
@@ -25,16 +24,16 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav mr-auto">
 						<li class="nav-item ml-md-3">
-							<a class="nav-link active" href="https://degreeworks.cuny.edu/Dashboard_qc/dashboard">Degreeworks</a>
+							<a class="nav-link active" href="https://degreeworks.cuny.edu/Dashboard_qc/dashboard" target="_blank">Degreeworks</a>
 						</li>
 						<li class="nav-item ml-md-3">
-							<a class="nav-link active" href="https://www.qc.cuny.edu/Pages/home.aspx">Queens College</a>
+							<a class="nav-link active" href="https://www.qc.cuny.edu/Pages/home.aspx" target="_blank">Queens College</a>
 						</li>
 					</ul>
 
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item">
-							<a class="nav-link active" href="loginPage.html">Log Out</a>
+							<a class="nav-link active" href="../../index.php">Log Out</a>
 						</li>
 					</ul>
 				</div>
@@ -46,9 +45,9 @@
 		<div class="main-content">
 			<div class="container mt-3">
 				<div>
-					<img class="img-fluid mb-3" src="https://macaulay.cuny.edu/wp-content/uploads/2016/07/qc10_bg_000056-1920x1080.jpg">
+					<img class="img-fluid mb-3" alt="picture" src="https://macaulay.cuny.edu/wp-content/uploads/2016/07/qc10_bg_000056-1920x1080.jpg">
 					<h2>Graduation Policies</h2>
-					<p><i>Welcome back student_name! Your EMPLID is _____</i></p>
+					<p><i>Welcome back <span id="student-name"></span>! Your EMPLID is <span id="student-id"></span></i></p>
 
 					<h3>Different ways to Submit Cancellation of Graduation Form</h3>
 					<p><i>Before you submit your cancellation form, you <b>must</b> have already filed for graduation on CUNYFirst.</i></p>
@@ -60,13 +59,125 @@
 						<li>Use our <i>new</i> online platform where it may take up
 							to 1-2 business days for a response! <a href="../HTML/formPage.html">ClickHere!</a></li>
 					</ul>
+				</div>
+			</div>
 
-					<p>If you have used our online platform, you may use our
-						<a href="../HTML/formPage.html">Application Status Tracker</a>.</p>
+			<div class="container mt-4 mb-5">
+				<h4>My Applications: <span id="application-amount">0</span></h4>
+				<table class="table text-center table-striped">
+					<thead class="bg-danger">
+						<tr>
+							<th>Application ID</th>
+							<th>Reqest Time</th>
+							<th>Processed Time</th>
+							<th>Result</th>
+						</tr>
+					</thead>
+					<tbody id="table-body">
+					</tbody>
+				</table>
+			</div>
+
+			<div class="modal fade" id="application-detail" tabindex="-1" role="dialog">
+				<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title">Application Form</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+
+						<div class="modal-body">
+							<div class="container mt-5">
+								<form>
+									<div class="form-row">
+										<div class="col-12">
+											<label><b>CUNYfirst ID</b></label>
+										</div>
+										<div class="col-12 col-sm-4">
+											<input id="studentID" class="form-control form-control-sm" disabled />
+										</div>
+									</div>
+
+									<div class="form-row mt-5">
+										<div class="col-12 col-sm-4">
+											<label><b>Last Name</b></label>
+											<input id="lastName" class="form-control form-control-sm" disabled />
+										</div>
+										<div class="col-12 col-sm-4 mt-4 mt-sm-0">
+											<label><b>First Name</b></label>
+											<input id="firstName" class="form-control form-control-sm" disabled />
+										</div>
+										<div class="col-12 col-sm-4 mt-4 mt-sm-0">
+											<label><b>M. I.</b></label>
+											<input id="middleName" class="form-control form-control-sm" disabled />
+										</div>
+									</div>
+
+									<div class="form-row mt-5">
+										<div class="col-12 col-md-4 mt-4 mt-sm-0">
+											<label><b>Semester </b></label>
+											<input id="semester" class="form-control form-control-sm" disabled />
+										</div>
+
+										<div class="col-12 col-md-4 mt-4 mt-md-0">
+											<label><b>Year </b></label>
+											<input id="year" class="form-control form-control-sm" disabled />
+										</div>
+
+										<div class="col-12 col-md-4 mt-4 mt-md-0">
+											<label><b>Career </b></label>
+											<input id="career" class="form-control form-control-sm" disabled />
+										</div>
+									</div>
+
+									<div class="form-row mt-5">
+										<div class="col">
+											<span><b>Applicant's reason for making this request is:</b></span>
+											<textarea id="reason" class="form-control" disabled></textarea>
+										</div>
+									</div>
+
+									<div class="form-row mt-5">
+										<div class="col-12 col-lg-4 mt-4 mt-lg-0">
+											<label><b>Phone Number</b></label>
+											<input id="phone" class="form-control form-control-sm" disabled />
+										</div>
+										<div class="col-12 col-lg-4 mt-4 mt-lg-0">
+											<label><b>QC Email Address</b></label>
+											<input id="email" class="form-control form-control-sm" disabled />
+										</div>
+									</div>
+								</form>
+							</div>
+
+							<div id="processed-decision" class="container mt-5">
+								<form>
+									<div class="form-row mt-5">
+										<div class="col-12 col-md-6 mt-4 mt-md-0">
+											<label><b>Decision</b></label>
+											<input id="decision" class="form-control form-control-sm" disabled />
+										</div>
+										<div class="col-12 col-md-6 mt-4 mt-md-0">
+											<label><b>Staff</b></label>
+											<input id="staff" class="form-control form-control-sm" disabled />
+										</div>
+									</div>
+
+									<div class="form-row mt-5">
+										<div class="col">
+											<label><b>Feedback</b></label>
+											<textarea id="feedback" class="form-control" disabled></textarea>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-
 
 
 		<!-- footer part -->
@@ -84,7 +195,7 @@
 					</ul>
 				</div>
 				<div class="logo">
-					<img class="img-fluid" src="../Images/CUNY_Text_logo_W.png">
+					<img class="img-fluid" alt="CUNY LOGO" src="../Images/CUNY_Text_logo_W.png">
 				</div>
 			</nav>
 		</div>

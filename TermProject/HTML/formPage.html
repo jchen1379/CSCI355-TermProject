@@ -6,10 +6,10 @@
 		<title>Request Form</title>
 		<link rel="stylesheet" type="text/css" href="../CSS/navigation.css" />
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-		<script src="../JS/formPage.js" type="text/javascript" charset="utf-8"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		<script src="../JS/formPage.js" type="text/javascript"></script>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	</head>
 	<body>
 
@@ -33,7 +33,7 @@
 
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item">
-							<a class="nav-link active" href="../index.php">Log Out</a>
+							<a class="nav-link active" href="../../index.php">Log Out</a>
 						</li>
 					</ul>
 				</div>
@@ -44,7 +44,7 @@
 			<div class="container">
 				<div class="row d-flex align-items-center">
 					<div class="col-6">
-						<img src="../Images/Queens_College_Logo.svg_-1-678x381.png" style="width:100%">
+						<img src="../Images/Queens_College_Logo.svg_-1-678x381.png" alt="Queens College Logo" style="width:100%">
 					</div>
 					<div class="col-6 text-right">
 						<p class="m-0">QC Hub</p>
@@ -64,7 +64,7 @@
 			</div>
 
 			<div class="container mt-5">
-				<form action="" method="POST" id="application-form">
+				<form id="application-form">
 					<div class="form-row">
 						<div class="col-12">
 							<label><b>CUNYfirst ID</b></label>
@@ -104,7 +104,7 @@
 					<div class="form-row mt-4">
 						<div class="col-10 col-md-4 mt-4 mt-sm-0">
 							<span><b>Semester: </b></span>
-							<select id="semester" name="semester" class="form-control-sm" required>
+							<select id="semester" class="form-control-sm">
 								<option value="Spring">Spring</option>
 								<option value="Fall">Fall</option>
 								<option value="Summer">Summer</option>
@@ -113,12 +113,12 @@
 
 						<div class="col-10 col-md-4 mt-4 mt-md-0">
 							<span><b>Year:</b></span>
-							<select id="year" class="form-control-sm" required></select>
+							<select id="year" class="form-control-sm"></select>
 						</div>
 
 						<div class="col-10 col-md-4 mt-4 mt-md-0">
 							<span><b>Career: </b></span>
-							<select id="career" name="career" class="form-control-sm" required>
+							<select id="career" class="form-control-sm">
 								<option value="Undergraduate">Undergraduate</option>
 								<option value="Graduate">Graduate</option>
 							</select>
@@ -179,7 +179,7 @@
 					</ul>
 				</div>
 				<div class="logo">
-					<img class="img-fluid" src="../Images/CUNY_Text_logo_W.png">
+					<img class="img-fluid" alt="CUNY LOGO" src="../Images/CUNY_Text_logo_W.png">
 				</div>
 			</nav>
 		</div>
