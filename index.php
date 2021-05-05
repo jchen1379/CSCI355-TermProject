@@ -1,6 +1,6 @@
 <?php
 	session_start();
 	session_destroy();
-	header("Location: Finals/HTML/loginPage.html");
+	header("Location: final/HTML/loginPage.html");
 	exit();
 ?>
