@@ -103,6 +103,14 @@ window.addEventListener('load', () => {
 			}
 		}
 		$("#signUp").modal('hide');
+		
+		// empty the sign up form after submission
+		firstName.value = "";
+		lastName.value = "";
+		studentID.value = "";
+		ssn.value = "";
+		password.value = "";
+		confirmPassword.value = "";
 	}
 
 
