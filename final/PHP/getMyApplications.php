@@ -1,7 +1,7 @@
 <?php
 	// return all pending or processed application
 
-	include "server.php";
+	require "server.php";
 	
 	session_start();
 	$id = $_SESSION['user'];

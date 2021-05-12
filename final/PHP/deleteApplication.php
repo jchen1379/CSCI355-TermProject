@@ -1,7 +1,8 @@
 <?php
-	include "server.php";
+	require "server.php";
 	
 	session_start();
+	
 	$applicationID = $_REQUEST['applicationID'];
 	
 	$stmt = $con->prepare("DELETE FROM APPLICATION WHERE applicationID = ?");

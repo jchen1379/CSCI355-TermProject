@@ -1,5 +1,5 @@
 <?php
-	include "server.php";
+	require "server.php";
 	
 	$username = strtolower($_REQUEST['username']);
 	$password = $_REQUEST['password'];

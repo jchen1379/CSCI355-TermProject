@@ -4,9 +4,10 @@
 	// applications that were processed by them. If the user is an admin, return all
 	
 
-	include "server.php";
+	require "server.php"; // set up the connection to db
 	
 	session_start();
+	
 	$applicationType = $_REQUEST['application'];
 	$role = $_SESSION['role'];
 	$id = $_SESSION['user'];
@@ -29,12 +30,13 @@
 	$response = array();
 	
 	$result = $con->query($sql);
-
+	
 	while($row = $result->fetch_assoc()){
 		$appObject = new \stdClass();
 		$appObject->applicationID = $row['applicationID'];
 		$appObject->studentLast = $row['lastName'];
 		$appObject->studentFirst = $row['firstName'];
+		
 		if($applicationType == "pending"){
 			$appObject->requestTime = $row['requestTime'];
 		}else if($applicationType == "processed"){

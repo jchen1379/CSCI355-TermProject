@@ -1,5 +1,5 @@
 <?php
-	include "server.php";
+	require "server.php";
 	
 	session_start();
 	
@@ -7,11 +7,13 @@
 	$firstName = $_REQUEST['first'];
 	$lastName = $_REQUEST['last'];
 	$password = $_REQUEST['password'];
+	
 	$hash = hash('sha256', $password);
-	$isStaff = FALSE;
+	
+	$isAdmin = FALSE;
 	
 	if(isset($_SESSION['login']) && $_SESSION['login'] == true && $_SESSION['role']=="admin"){
-		$isStaff = TRUE;
+		$isAdmin = TRUE;
 		$role = $_REQUEST['role'];
 		$email = "$firstName.$lastName" . substr((string) $id, -2). "@qc.cuny.edu";
 		$stmt = $con->prepare("INSERT INTO STAFF VALUES (?, ?, ?, ?, ?, ?);");
@@ -29,7 +31,7 @@
 	if($stmt->execute()){
 		$response->result = true;
 		$response->email = $email;
-		if($isStaff)
+		if($isAdmin)
 			$response->role = $role;
 	}else{
 		$response->result = false;
