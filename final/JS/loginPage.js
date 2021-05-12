@@ -73,6 +73,7 @@ window.addEventListener('load', () => {
 			}
 		}
 	}
+	
 
 
 	// submit the sign up information to database

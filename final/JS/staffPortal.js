@@ -1,6 +1,4 @@
 window.addEventListener('load', () => {
-	// redirect the user to the login page if they are not logged in
-	checkIfLoggedIn();
 
 	let pageTitle = document.querySelector("#application-title");
 	let historyBtn = document.querySelector("#navigation-tab");
@@ -16,25 +14,6 @@ window.addEventListener('load', () => {
 
 	historyBtn.addEventListener('click', loadHistory);
 	homeBtn.addEventListener('click', loadPending);
-
-
-	// kick out none logged in user
-	function checkIfLoggedIn() {
-		var httpRequest = new XMLHttpRequest();
-		httpRequest.open("GET", "../PHP/verifyUser.php");
-		httpRequest.send();
-		httpRequest.onreadystatechange = function() {
-			if (this.readyState == 4 && this.status == 200) {
-				var json = JSON.parse(httpRequest.responseText);
-				if (json['loggedIn'] == false || json['role'] == 'student') {
-					window.location.replace("../HTML/loginPage.html");
-				} else {
-					document.querySelector("#staff-name").innerHTML = json['firstName'] + " " + json['lastName'];
-					document.querySelector("#staff-id").innerHTML = json['user'];
-				}
-			}
-		}
-	}
 
 	function loadHistory() {
 		clearTable();
